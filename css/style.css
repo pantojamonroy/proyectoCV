@@ -215,7 +215,9 @@ height: 500px;
 
 /*Skills*/
 #skills {
+    display: flex;
     padding: 90px 0;
+    flex-wrap: wrap;
 }
 
 #skills h2 {
@@ -223,27 +225,33 @@ height: 500px;
 }
 
 .skills-row {
+    width: 50%;
     display: flex;
     padding-bottom: 50px;
+
 }
 
 .skills-row-left,
 .skills-row-right {
+
 width: 50%;
+padding-bottom: 50px;
 display: flex;
 }
 
 .skills-row-left-image,
 .skills-row-right-image {
+
     width: 50%;
-    text-align: right;
-    padding-right: 50px;
+    text-align: center;
+    flex:1;
+}
+.skills-row-left-text,
+.skills-row-right-text{
+    flex: 1;
+
 }
 
-.skills-row-left-image img,
-.skills-row-right-image img {
-    height: 50px;
-}
 
 /*Timeline*/
 #timeline {
@@ -306,7 +314,7 @@ display: flex;
 /* Contact */
 #contact {
     padding: 90px 0;
-    background-color: #f8f9fa;
+    background: #b1cac4;
 }
 
 #contact h2 {
@@ -330,6 +338,12 @@ display: flex;
 
 .contact-form button {
     width: 100%;
+}
+
+.center {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: auto;
 }
 
 /* Footer */
