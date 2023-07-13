@@ -1,28 +1,35 @@
-document.getElementById("contact").addEventListener("submit", function(event){
-    event.preventDefault();
 
-    var name = document.getElementById("name").value;
-    var lastname = document.getElementById("lastname").value;
-    var phone = document.getElementById("phone").value;
-    var email = document.getElementById("email").value;
-    var city = document.getElementById("city").value;
 
-    var data = {
-        name: name,
-        lastname: lastname,
-        phone: phone,
-        email: email,
-        city: city,
+/*document.getElementById("contact").addEventListener("submit", function(event){
+    event.preventDefault();*/
+    
+    function savecliente();
+
+    let name = document.getElementById("name");
+    let lastname = document.getElementById("lastname");
+    let phone = document.getElementById("phone");
+    let email = document.getElementById("email");
+    let city = document.getElementById("city");
+    let message = document.getElementById("message");
+
+    let cliente = {
+        name: nameCliente.value,
+        lastname: lastnameCliente.value,
+        phone: phoneCliente.value,
+        email: emailCliente.value,
+        city: cityCliente.value,
+        message: messageCliente.value
     };
 
-    fetch("http://127.0.0.1:/api/contact", {
+    let url = "http://127.0.0.1:8000/api/clienteC";
+    
+    fetch(url,{
         method: "POST",
         headers: {
             "content-Type": "application/json"
         },
-        body: JSON, stringify(data)
-    })
-    .them(function(response) {
+        body: JSON, stringify(cliente)
+    }).them(function(response) {
         if (response.ok) {
         alert("Datos enviados correctamente");
         } else {
@@ -32,4 +39,15 @@ document.getElementById("contact").addEventListener("submit", function(event){
     .catch(function(error){
         alert("Error al enviar datos")
     });
-});
+
+
+    /*.them(function(response) {
+        if (response.ok) {
+        alert("Datos enviados correctamente");
+        } else {
+            alert("Error al enviar datos");
+        }
+    })
+    .catch(function(error){
+        alert("Error al enviar datos")
+    });*/
