@@ -1,7 +1,7 @@
 /*document.getElementById("contact").addEventListener("submit", function(event){
     event.preventDefault();*/
-    
-    function saveCliente(){
+
+function saveCliente() {
 
     let nameCliente = document.getElementById("name");
     let lastnameCliente = document.getElementById("lastname");
@@ -19,7 +19,7 @@
         message: messageCliente.value
     };
 
-    let url = "http://127.0.0.1:8000/api/cliente";
+    let url = "http://127.0.0.1:8000/api/clienteC";
     let = params = {
         method: "POST",
         headers: {
@@ -27,15 +27,16 @@
         },
         body: JSON.stringify(cliente),
     }
-    
-    fetch(url,params).them((response) =>{
+
+    fetch(url, params).then((response) => {
 
         if (response.status == 201) {
-        alert("Datos enviados correctamente");
-        }else{
+            alert("Datos enviados correctamente");
+        } else {
             alert("Error al enviar datos");
         }
     });
+
     return true;
 
 }
